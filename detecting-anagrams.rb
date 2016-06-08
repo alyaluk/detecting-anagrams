@@ -1,11 +1,12 @@
 # Place your solution here
 
+def canonical(word)
+    blank = ""
+    checkword = word.downcase.split("").sort.each{|x| blank << x}
+end
+
 def is_anagram?(word1,word2)
-    blank1 = ""
-    blank2 = ""
-    checkword1 = word1.downcase.split("").sort.each{|x| blank1 << x}
-    checkword2 = word2.downcase.split("").sort.each{|x| blank2 << x}
-    puts blank1 == blank2 ? true : false
+    puts canonical(word1) == canonical(word2) ? true : false
 end
 
 puts is_anagram?('cinema', 'iceman') # => true
